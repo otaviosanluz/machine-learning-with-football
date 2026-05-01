@@ -111,9 +111,9 @@ Python 3.11+ recommended.
 
 ## Author
 
-**Otávio** — Football Data Scientist.
+**Otavio Santos** — Football Data Scientist.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://linkedin.com/in/your-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/otaviosanluz/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?logo=github)](https://github.com/otaviosanluz)
 
 ---
