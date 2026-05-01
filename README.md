@@ -30,7 +30,7 @@ Every concept from the book is adapted to answer real questions about Brazilian 
 | Source | [Impect API](https://www.impect.com/) |
 | Competition | Brasileirão Série A 2025 |
 | Granularity | Team per match |
-| Columns | 1,400+ tactical, physical, and possession metrics |
+| Columns | 1,400+ tactical and possession metrics |
 | Key metrics | xG, post-shot xG, packing (bypassed opponents), PPDA, progressive passes, set-piece xG |
 
 > **Note:** The raw data file is not included in this repository (proprietary). To reproduce the analyses, you will need access to the Impect API or a compatible dataset with the same column schema.
@@ -42,12 +42,6 @@ Every concept from the book is adapted to answer real questions about Brazilian 
 | # | Notebook | Topic | ISLP Chapter | Status |
 |---|---|---|---|---|
 | 01 | [lecture01_simple_linear_regression.ipynb](notebooks/lecture01_simple_linear_regression.ipynb) | Simple Linear Regression — inference & prediction | Ch. 3.1 | ✅ Done |
-| 02 | — | Multiple Linear Regression | Ch. 3.2–3.3 | 🔜 Next |
-| 03 | — | Classification — Logistic Regression & LDA | Ch. 4 | 🔜 Planned |
-| 04 | — | Resampling — Cross-Validation & Bootstrap | Ch. 5 | 🔜 Planned |
-| 05 | — | Regularisation — Ridge & Lasso | Ch. 6 | 🔜 Planned |
-| 06 | — | Tree-Based Methods | Ch. 8 | 🔜 Planned |
-| 07 | — | Support Vector Machines | Ch. 9 | 🔜 Planned |
 
 ---
 
@@ -101,7 +95,7 @@ All visualisations share a consistent palette defined in `utils/football_helpers
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/football-analytics-ml.git
+git clone https://github.com/otaviosanluz/football-analytics-ml.git
 cd football-analytics-ml
 
 # Install dependencies
@@ -117,10 +111,10 @@ Python 3.11+ recommended.
 
 ## Author
 
-**Otávio** — data analyst and football analytics enthusiast, building applied ML skills through real Série A data.
+**Otávio** — Football Data Scientist.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?logo=github)](https://github.com/your-username)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?logo=github)](https://github.com/otaviosanluz)
 
 ---
 
