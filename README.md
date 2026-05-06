@@ -1,4 +1,4 @@
-# Football Analytics with Machine Learning
+# Machine Learning with Football
 
 > Applying statistical learning methods to real match data from the **Brazilian Championship Série A 2025**, using the [ISLP book](https://www.statlearning.com/) as a theoretical guide.
 
@@ -19,7 +19,6 @@ Every concept from the book is adapted to answer real questions about Brazilian 
 **Goals:**
 - Build a rigorous, reproducible ML portfolio grounded in statistical theory
 - Apply each method to a meaningful football analytics question
-- Develop intuition about what drives performance in Série A 2025
 
 ---
 
