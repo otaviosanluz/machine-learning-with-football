@@ -1,4 +1,4 @@
-# Data — never commit raw Impect files
+# Data — pre-processed CSVs and raw files are not versioned
 data/
 
 # Python

@@ -8,3 +8,4 @@ jupyter>=1.0
 jupyterlab>=4.0
 openpyxl>=3.1
 islp>=0.3
+statsbombpy>=1.0

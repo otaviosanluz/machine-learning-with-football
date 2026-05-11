@@ -1,11 +1,12 @@
 # Machine Learning with Football
 
-> Applying statistical learning methods to real match data from the **Brazilian Championship Série A 2025**, using the [ISLP book](https://www.statlearning.com/) as a theoretical guide.
+> Applying statistical learning methods to real match data from **La Liga 2015/16**, using the [ISLP book](https://www.statlearning.com/) as a theoretical guide.
 
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
 ![statsmodels](https://img.shields.io/badge/statsmodels-0.14-blue)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-F7931E?logo=scikit-learn&logoColor=white)
+![StatsBomb](https://img.shields.io/badge/StatsBomb-Open%20Data-red)
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
 ---
@@ -14,7 +15,7 @@
 
 This repository documents a structured study of Machine Learning techniques applied to football analytics. Each notebook corresponds to a lecture from a course based on **ISLP — An Introduction to Statistical Learning with Applications in Python** (James, Witten, Hastie, Tibshirani & Taylor, 2023).
 
-Every concept from the book is adapted to answer real questions about Brazilian football using match-level data from the **Impect API** — one of the most granular tactical datasets available, with 1,400+ metrics per match covering packing, xG, pressure, possession phases, and more.
+Every concept from the book is adapted to answer real questions about football using match-level data from the **StatsBomb Open Data** — freely available, event-level data with shot-by-shot detail for La Liga 2015/16 (380 matches).
 
 **Goals:**
 - Build a rigorous, reproducible ML portfolio grounded in statistical theory
@@ -26,13 +27,13 @@ Every concept from the book is adapted to answer real questions about Brazilian 
 
 | Field | Details |
 |---|---|
-| Source | [Impect API](https://www.impect.com/) |
-| Competition | Brasileirão Série A 2025 |
+| Source | [StatsBomb Open Data](https://github.com/statsbomb/open-data) (free, no credentials needed) |
+| Competition | La Liga 2015/16 (Spain) |
 | Granularity | Team per match |
-| Columns | 1,400+ tactical and possession metrics |
-| Key metrics | xG, post-shot xG, packing (bypassed opponents), PPDA, progressive passes, set-piece xG |
+| Observations | 760 team-match records (380 matches × 2 teams) |
+| Key metrics | xG (post-shot model), shots by type and location, freeze frame (defenders near shot) |
 
-> **Note:** The raw data file is not included in this repository (proprietary). To reproduce the analyses, you will need access to the Impect API or a compatible dataset with the same column schema.
+> **Reproducibility:** All data is fetched via the `statsbombpy` library at runtime — no raw files needed. Run `pip install -r requirements.txt` and all notebooks will work without any data download.
 
 ---
 
@@ -44,31 +45,15 @@ Every concept from the book is adapted to answer real questions about Brazilian 
 
 ---
 
-## Lecture 01 Highlights — Simple Linear Regression
-
-**Question:** Can the number of shots from inside the box predict post-shot xG in Série A?
-
-**Variable choice rationale:**
-- **Target — `POSTSHOT_XG`**: post-shot expected goals, which accounts for actual shot placement and trajectory. More predictive of goals than pre-shot xG.
-- **Predictor — `SHOT_AT_GOAL_NUMBER_IN_PITCH_POSITION_OPPONENT_BOX`**: shots taken from inside the penalty area — the primary driver of shot quality, with no leakage from the post-shot model itself.
-
-**Covered:**
-- OLS fitting with `statsmodels` — full inference summary (coefficients, SE, t-stats, p-values, R², RSE, F-statistic)
-- 95% Confidence Intervals for coefficients
-- Point prediction, Confidence Interval (mean response), and Prediction Interval (individual observation)
-- Residual diagnostics
-
----
-
 ## Project Structure
 
 ```
-football-analytics-ml/
+machine-learning-with-football/
 ├── notebooks/
 │   └── lecture01_simple_linear_regression.ipynb
 ├── utils/
 │   └── football_helpers.py   # shared palette, apply_style()
-├── data/                     # not versioned — see Dataset section
+├── data/                     # not versioned — generated at runtime via statsbombpy
 ├── requirements.txt
 ├── CLAUDE.md                 # project conventions for AI-assisted development
 └── README.md
@@ -94,8 +79,8 @@ All visualisations share a consistent palette defined in `utils/football_helpers
 
 ```bash
 # Clone the repository
-git clone https://github.com/otaviosanluz/football-analytics-ml.git
-cd football-analytics-ml
+git clone https://github.com/otaviosanluz/machine-learning-with-football.git
+cd machine-learning-with-football
 
 # Install dependencies
 pip install -r requirements.txt
@@ -120,4 +105,5 @@ Python 3.11+ recommended.
 ## References
 
 - James, G., Witten, D., Hastie, T., Tibshirani, R., & Taylor, J. (2023). *An Introduction to Statistical Learning with Applications in Python*. Springer. [Free PDF](https://www.statlearning.com/)
-- [Impect API Documentation](https://www.impect.com/)
+- [StatsBomb Open Data](https://github.com/statsbomb/open-data)
+- [statsbombpy documentation](https://github.com/statsbomb/statsbombpy)
